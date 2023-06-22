@@ -69,7 +69,7 @@ SELECT round(avg(DAILY_FEE), 0) AS AVERAGE_FEE
 
 
 
-### 과일로 만든 아이스크림 고르기 2023.06.15
+### 과일로 만든 아이스크림 고르기 (난이도1) 2023.06.15
 # https://school.programmers.co.kr/learn/courses/30/lessons/133025
 # 실패 답안1 : WHERE로만 하면 안됨 JOIN도 사용해야 함
 SELECT F.FLAVOR
@@ -83,3 +83,33 @@ SELECT F.FLAVOR
     ON I.FLAVOR = F.FLAVOR
     WHERE F.TOTAL_ORDER > 3000
     AND I.INGREDIENT_TYPE = 'fruit_based';
+    
+    
+
+### 12세 이하인 여자 환자 목록 출력하기 (난이도1) 2023.06.22
+# https://school.programmers.co.kr/learn/courses/30/lessons/132201
+# 성공답안
+SELECT PT_NAME, PT_NO, GEND_CD, AGE, ifnull(TLNO, 'NONE') as TLNO
+    FROM PATIENT
+    WHERE AGE <= 12
+    AND GEND_CD = 'W'
+    ORDER BY AGE DESC, PT_NAME ASC;
+
+
+
+### 인기있는 아이스크림 (난이도1) 2023.06.22
+# https://school.programmers.co.kr/learn/courses/30/lessons/133024
+# 성공답안
+SELECT FLAVOR
+    FROM FIRST_HALF
+    ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID ASC
+
+
+
+### 재구매가 일어난 상품과 회원 리스트 구하기
+# https://school.programmers.co.kr/learn/courses/30/lessons/131536
+# 문제 정답이 뭔가 이상함!!
+# 나중에 재도전
+
+
+
